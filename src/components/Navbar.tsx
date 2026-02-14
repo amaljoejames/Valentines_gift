@@ -55,9 +55,9 @@ const Navbar = () => {
   return (
     <>
       <div className="header">
-        <a href="/" className="navbar-title" data-cursor="disable">
-          Logo
-        </a>
+         <a href="/" className="loader-title" data-cursor="disable">
+            Home
+</a>
         <a
           href="mailto:example@mail.com"
           className="navbar-connect"
