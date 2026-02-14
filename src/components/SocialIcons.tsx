@@ -47,11 +47,10 @@ const SocialIcons = () => {
       };
 
       document.addEventListener("mousemove", onMouseMove);
-
       updatePosition();
 
       return () => {
-        elem.removeEventListener("mousemove", onMouseMove);
+        document.removeEventListener("mousemove", onMouseMove);
       };
     });
   }, []);
@@ -60,27 +59,53 @@ const SocialIcons = () => {
     <div className="icons-section">
       <div className="social-icons" data-cursor="icons" id="social">
         <span>
-          <a href="https://github.com" target="_blank">
+          <a
+            href="https://github.com/sonichanchal702"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaGithub />
           </a>
         </span>
+
         <span>
-          <a href="https://www.linkedin.com" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/chanchal-soni-7528b9317/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaLinkedinIn />
           </a>
         </span>
+
         <span>
-          <a href="https://x.com" target="_blank">
+          <a
+            href="https://x.com"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaXTwitter />
           </a>
         </span>
+
         <span>
-          <a href="https://www.instagram.com" target="_blank">
+          <a
+            href="https://www.instagram.com/amal_13_2005/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaInstagram />
           </a>
         </span>
       </div>
-      <a className="resume-button" href="#">
+
+      {/* Resume Button */}
+      <a
+        className="resume-button"
+        href="https://drive.google.com/file/d/1bZK8evJVbA0gjpyh_-YfwrRwCZSw1jFW/view?usp=sharing"
+        target="_blank"
+        rel="noreferrer"
+      >
         <HoverLinks text="RESUME" />
         <span>
           <TbNotes />

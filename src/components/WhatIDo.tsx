@@ -4,9 +4,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const WhatIDo = () => {
   const containerRef = useRef<(HTMLDivElement | null)[]>([]);
+
   const setRef = (el: HTMLDivElement | null, index: number) => {
     containerRef.current[index] = el;
   };
+
   useEffect(() => {
     if (ScrollTrigger.isTouch) {
       containerRef.current.forEach((container) => {
@@ -16,24 +18,31 @@ const WhatIDo = () => {
         }
       });
     }
+
     return () => {
       containerRef.current.forEach((container) => {
         if (container) {
-          container.removeEventListener("click", () => handleClick(container));
+          container.removeEventListener("click", () =>
+            handleClick(container)
+          );
         }
       });
     };
   }, []);
+
   return (
     <div className="whatIDO">
+      {/* TITLE */}
       <div className="what-box">
         <h2 className="title">
           W<span className="hat-h2">HAT</span>
           <div>
-            I<span className="do-h2"> DO</span>
+            <span className="do-h2"> I DO</span>
           </div>
         </h2>
       </div>
+
+      {/* CONTENT */}
       <div className="what-box">
         <div className="what-box-in">
           <div className="what-border2">
@@ -58,6 +67,8 @@ const WhatIDo = () => {
               />
             </svg>
           </div>
+
+          {/* DEVELOP */}
           <div
             className="what-content what-noTouch"
             ref={(el) => setRef(el, 0)}
@@ -84,31 +95,34 @@ const WhatIDo = () => {
                 />
               </svg>
             </div>
+
             <div className="what-corner"></div>
 
             <div className="what-content-in">
               <h3>DEVELOP</h3>
               <h4>Description</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae.
+                I build scalable full-stack web applications with a strong focus
+                on clean architecture. I
+                ensure performance, security, and maintainability.
               </p>
+
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
                 <div className="what-tags">JavaScript</div>
-                <div className="what-tags">TypeScript</div>
-                <div className="what-tags">Three.js</div>
                 <div className="what-tags">React</div>
-                <div className="what-tags">Css</div>
                 <div className="what-tags">Node.js</div>
-                <div className="what-tags">Next.js</div>
                 <div className="what-tags">Express.js</div>
-                <div className="what-tags">PHP</div>
-                <div className="what-tags">MySql</div>
+                <div className="what-tags">MongoDB</div>
+                <div className="what-tags">JWT Auth</div>
+                <div className="what-tags">EJS</div>
               </div>
+
               <div className="what-arrow"></div>
             </div>
           </div>
+
+          {/* ANALYZE & DESIGN */}
           <div
             className="what-content what-noTouch"
             ref={(el) => setRef(el, 1)}
@@ -126,25 +140,29 @@ const WhatIDo = () => {
                 />
               </svg>
             </div>
+
             <div className="what-corner"></div>
+
             <div className="what-content-in">
-              <h3>DESIGN</h3>
+              <h3>ANALYZE & DESIGN</h3>
               <h4>Description</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae
+                I analyze requirements, user flows, and business needs to design
+                efficient system architectures.
               </p>
+
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Blender</div>
-                <div className="what-tags">Zbrush</div>
-                <div className="what-tags">UI Design</div>
-                <div className="what-tags">Motion</div>
-                <div className="what-tags">Rigging</div>
-                <div className="what-tags">3D Animation</div>
-                <div className="what-tags">Character Design</div>
-                <div className="what-tags">Modelling</div>
+                <div className="what-tags">System Design</div>
+                <div className="what-tags">MVC Architecture</div>
+                <div className="what-tags">Database Design</div>
+                <div className="what-tags">Problem Solving</div>
+                <div className="what-tags">DSA</div>
+                <div className="what-tags">LeetCode</div>
+                <div className="what-tags">API Design</div>
+                <div className="what-tags">Debugging</div>
               </div>
+
               <div className="what-arrow"></div>
             </div>
           </div>
@@ -156,9 +174,11 @@ const WhatIDo = () => {
 
 export default WhatIDo;
 
+/* MOBILE CLICK HANDLER */
 function handleClick(container: HTMLDivElement) {
   container.classList.toggle("what-content-active");
   container.classList.remove("what-sibling");
+
   if (container.parentElement) {
     const siblings = Array.from(container.parentElement.children);
 
