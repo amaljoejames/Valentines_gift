@@ -56,7 +56,7 @@ const Navbar = () => {
     <>
       <div className="header">
         <a href="/" className="navbar-title" data-cursor="disable">
-          logo
+          Logo
         </a>
         <a
           href="mailto:example@mail.com"
