@@ -56,7 +56,7 @@ const Navbar = () => {
     <>
       <div className="header">
         <a href="/" className="navbar-title" data-cursor="disable">
-          <img src="CascadeProjects\Portfolio-Website\dist\assets\Screenshot 2025-12-16 145137.png"/>
+          logo
         </a>
         <a
           href="mailto:example@mail.com"
